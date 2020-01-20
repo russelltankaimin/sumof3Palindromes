@@ -1,4 +1,4 @@
-def alogrithm_1(p1,p2,p3,base,num_string):
+def algorithm_1(p1,p2,p3,base,num_string):
     num=num_string[::-1]
     length=len(num_string)
     if length%2==0:
