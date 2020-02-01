@@ -1,4 +1,4 @@
-def algorithm_2(p1,p2,p3,base,num_string):
+def algorithm_2(p1,p2,p3,base,num_string,val=1):
     num=num_string[::-1]
     length=len(num)
     if length%2==0:
@@ -58,4 +58,7 @@ def algorithm_2(p1,p2,p3,base,num_string):
     temp_p2=temp_p2[1:m+1]
     p2=p2+temp_p2
     p3=p3+p3[::-1]
-    return display(p1,p2,p3,num_string)
+    if val==2:
+        return p1,p2,p3
+    else:
+        return display(p1,p2,p3,num_string)
