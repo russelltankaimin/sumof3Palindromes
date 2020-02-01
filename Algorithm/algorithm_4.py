@@ -21,10 +21,6 @@ def algorithm_4(p1,p2,p3,base,num_string):
     p2.append(d(int(num[m-1])-p3[m-2]-1,base))
     p3.append(d(int(num[m-2])-p1[m-2]-p2[m-1]-carry[m-2],base))
     carry.append((p1[m-2]+p2[m-1]+p3[m-1]+carry[m-2]-int(num[m-2]))//base)
-    print(p1)
-    print(p2)
-    print(p3)
-    print("\n")
     if p1[m-1]+carry[m-1]==1:
         print("No Adjustment needed")
     elif p1[m-1]+carry[m-1]==0 and p2[m-1]!=base - 1:
@@ -135,7 +131,7 @@ def algorithm_4(p1,p2,p3,base,num_string):
             p3[m-1]=p3[m-1]+1
         elif p3[m-1]==base-1 and p3[m-2]!=0:
             if p2[m-2]!=base-1:
-                p1[m-1]==0
+                p1[m-1]=0
                 p2[m-2]=p2[m-2]+1
                 p2[m-1]=p2[m-1]+1
                 p3[m-2]=p3[m-2]-1
@@ -158,7 +154,7 @@ def algorithm_4(p1,p2,p3,base,num_string):
                 p3[m-2]=p3[m-2]+1
         elif p3[m-1]==base-1 and p3[m-2]==0 and p2[m-2]!=0:
             if p2[m-1]!=0 and p2[m-1]!=1:
-                p1[m-1]==2
+                p1[m-1]=2
                 p2[m-2]=p2[m-2]-1
                 p2[m-1]=p2[m-1]-2
                 p3[m-2]=1
@@ -198,3 +194,5 @@ def algorithm_4(p1,p2,p3,base,num_string):
         p3[m-1]=0
     p2=p2[1:m+1]
     p3=p3[1:m+1]
+    p1=p1+p1[::-1]
+    
