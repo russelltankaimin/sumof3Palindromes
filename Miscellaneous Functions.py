@@ -29,25 +29,24 @@ def display(p1,p2,p3,num_string):
     print(num_string)
 
 def hex_display(p1,p2,p3,num_string):
-  num_to_hex={10:"A",11:"B",12:"C",13:"D",14:"E",15:"F"}
   x,y,z='','',''
   for num in p1:
     if num<10:
       x=x+str(num)
     else:
-      x=x+num_to_hex[num]
+      x=x+hex(num)[2:].upper()
   for ber in p2:
     if ber <10:
       y=y+str(ber)
     else:
-      y=y+num_to_hex[ber]
+      y=y+hex(ber)[2:].upper()
   for phile in p3:
     if phile<10:
       z=z+str(phile)
     else:
-      z=z+num_to_hex[phile]
+      z=z+hex(phile)[2:].upper()
   print(x)
   print("+"+y)
   print("+ "+z)
   print("--------------------------")
-  print(hex(num_string))
+  print(hex(num_string)[2:].upper())
