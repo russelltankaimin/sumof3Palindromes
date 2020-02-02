@@ -50,3 +50,11 @@ def hex_display(p1,p2,p3,num_string):
   print("+ "+z)
   print("--------------------------")
   print(hex(num_string)[2:].upper())
+
+def hex_int_to_lst(num):
+    hex_to_dec={"A":10,"B":11,"C":12,"D":13,"E":14,"F":15,"9":9,"8":8,"7":7,"6":6,"5":5,"4":4,"3":3,"2":2,"1":1,"0":0}
+    lst=[]
+    reck=str(num)
+    for i in reck:
+        lst.append(hex_to_dec[i])
+    return lst
