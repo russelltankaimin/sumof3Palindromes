@@ -1,0 +1,96 @@
+Let me make it clear that some sums may not be correct. I have yet to test alot of them.
+
+Enter its base
+16
+
+Enter the hexadecimal number ,format DEADBEEF without the 0x prefix
+DEADBEEF93746282
+This is an A1 type of number
+D11111111111111D
++D181A4D2D4A181D
++ 84939155193948
+--------------------------
+DEADBEEF93746282
+
+runfile('C:/Users/RussellTan/Desktop/sum3Palindromes.py', wdir='C:/Users/RussellTan/Desktop')
+
+Enter its base
+2
+
+Enter your number
+100001011011001111101
+This is an A5 type of number
+10010110000001101001
++1000100110110010001
++ 110000010010000011
+----------------------
+100001011011001111101
+
+runfile('C:/Users/RussellTan/Desktop/sum3Palindromes.py', wdir='C:/Users/RussellTan/Desktop')
+
+Enter its base
+7
+
+Enter your number
+33165425260246532630246
+This is an A1 type of number
+Adjustment needed
+30111111101110111111103
++2604110035005300114062
++ 150204121131121402051
+----------------------
+33165425260246532630246
+
+runfile('C:/Users/RussellTan/Desktop/sum3Palindromes.py', wdir='C:/Users/RussellTan/Desktop')
+
+Enter its base
+9
+
+Enter your number
+123408264756241637562883645200362
+This is a B6 type of number
+120010101111001010100111101010021
++2405646011057170717501106465042
++ 882416634172446644271436614288
+----------------------
+123408264756241637562883645200362
+Time elapsed: 23.791576862335205 miliseconds
+
+runfile('C:/Users/RussellTan/Desktop/sum3Palindromes.py', wdir='C:/Users/RussellTan/Desktop')
+
+Enter its base
+7
+
+Enter your number
+1023456432
+This is an A6 type of number
+Adjustment needed
+641111146
++43244234
++ 6101016
+----------------------
+1023456432
+
+
+
+
+Time elapsed: 14.934986114501953 miliseconds
+
+runfile('C:/Users/RussellTan/Desktop/sum3Palindromes.py', wdir='C:/Users/RussellTan/Desktop')
+
+Enter its base
+4
+
+Enter your number
+12332112332112333311122223
+This is a B2 type of number
+12200001100022000110000221
++112322023230032320223211
++ 13123202200300220232131
+----------------------
+12332112332112333311122223
+
+
+
+
+Time elapsed: 29.62327241897583 miliseconds
