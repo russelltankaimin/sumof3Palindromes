@@ -21,10 +21,6 @@ def algorithm_4(p1,p2,p3,base,num_string,val):
     p2.append(d(int(num[m-1])-p3[m-2]-1,base))
     p3.append(d(int(num[m-2])-p1[m-2]-p2[m-1]-carry[m-2],base))
     carry.append((p1[m-2]+p2[m-1]+p3[m-1]+carry[m-2]-int(num[m-2]))//base)
-    print(p1)
-    print(p2)
-    print(p3)
-    print("\n")
     if p1[m-1]+carry[m-1]==1:
         print("No Adjustment needed")
     elif p1[m-1]+carry[m-1]==0 and p2[m-1]!=base - 1:
@@ -207,5 +203,8 @@ def algorithm_4(p1,p2,p3,base,num_string,val):
       #It is a special number
       return p1,p2,p3
     else:
-      return  display(p1,p2,p3,num_string)
+        if base==16:
+            return hex_display(p1,p2,p3,num_string)
+        else:
+            return display(p1,p2,p3,num_string)
     
