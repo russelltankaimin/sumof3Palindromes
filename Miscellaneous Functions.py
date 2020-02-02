@@ -27,3 +27,27 @@ def display(p1,p2,p3,num_string):
     print("+ "+r3)
     print("----------------------")
     print(num_string)
+
+def hex_display(p1,p2,p3,num_string):
+  num_to_hex={10:"A",11:"B",12:"C",13:"D",14:"E",15:"F"}
+  x,y,z='','',''
+  for num in p1:
+    if num<10:
+      x=x+str(num)
+    else:
+      x=x+num_to_hex[num]
+  for ber in p2:
+    if ber <10:
+      y=y+str(ber)
+    else:
+      y=y+num_to_hex[ber]
+  for phile in p3:
+    if phile<10:
+      z=z+str(phile)
+    else:
+      z=z+num_to_hex[phile]
+  print(x)
+  print("+"+y)
+  print("+ "+z)
+  print("--------------------------")
+  print(hex(num_string))
