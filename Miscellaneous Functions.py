@@ -58,3 +58,9 @@ def hex_int_to_lst(num):
     for i in reck:
         lst.append(hex_to_dec[i])
     return lst
+
+def lst_to_hex_int(num_list):
+    string_hex=''
+    for integer in num_list:
+        string_hex=string_hex+hex(integer)[2:].upper()
+    return string_hex
