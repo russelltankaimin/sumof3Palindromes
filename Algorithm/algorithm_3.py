@@ -27,10 +27,8 @@ def algorithm_3(p1,p2,p3,base,num_string):
     if carry[m-1]==1:
         print("No Adjustment Needed")
     elif carry[m-1]==0:
-        print("Carry = 1")
         p1[m]=1
     elif carry[m-1]==2:
-        print("Carry 2")
         if p2[m-2] !=0 and p3[m-2] != base - 1:
             p2[m-2]=p2[m-2]-1
             p2[m-1]=p2[m-1]-1
@@ -54,4 +52,7 @@ def algorithm_3(p1,p2,p3,base,num_string):
     p2=temp_p2+p2[::-1]
     temp_p1=p1[0:m]
     p1=temp_p1+p1[::-1]
-    return display(p1,p2,p3,num_string)
+    if base==16:
+        return hex_display(p1,p2,p3,num_string)
+    else:
+        return display(p1,p2,p3,num_string)
