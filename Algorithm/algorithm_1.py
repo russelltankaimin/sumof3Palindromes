@@ -40,7 +40,7 @@ def algorithm_1(p1,p2,p3,base,num_string):
     p1=p1+temp_p1[1:m+1]
     p2=p2+p2[::-1]
     p3=p3+temp_p3[1:m]
-    print(p1)
-    print(p2)
-    print(p3)
-    return display(p1,p2,p3,num_string)
+    if base==16:
+        return hex_display(p1,p2,p3,num_string)
+    else:
+        return display(p1,p2,p3,num_string)
