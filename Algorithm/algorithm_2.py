@@ -61,4 +61,7 @@ def algorithm_2(p1,p2,p3,base,num_string,val=1):
     if val==2:
         return p1,p2,p3
     else:
-        return display(p1,p2,p3,num_string)
+        if base==16:
+            return hex_display(p1,p2,p3,num_string)
+        else:
+            return display(p1,p2,p3,num_string)
