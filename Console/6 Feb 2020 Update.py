@@ -79,7 +79,7 @@ def two_digit_sum(num_string,base):
 def main():
     base=int(input("Enter its base\n"))
     if base>10:
-        number=input("Enter the base"+"base"+" number ,format DEADBEEF without the 0x prefix\n")
+        number=input("Enter the base"+str(base)+" number ,format DEADBEEF without the 0x prefix\n")
         number=hex_int_to_lst(number)
     else:
         number=int(input("Enter your number\n"))
