@@ -5,7 +5,7 @@ This is implemented according to the algorithm provided by a paper from Javier C
 titled : " EVERY POSITIVE INTEGER IS A SUM OF 3 PALINDROMES "
 
 Even though Christian Lawson Perfect has done one for base-10 integers and Lewis Baxter has done an applet for base 5-10 integers, 
-I thought of implementing one that encompasses HEXADECIMAL NUMBERS as well.
+I thought of implementing one that encompasses numbers of bases 5-16..YES, INCLUDING HEXADECIMAL NUMBERS as well.
 
 Expected time of Project Completion : June 2020
 
