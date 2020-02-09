@@ -1,63 +1,103 @@
-Base 8 Test:
+Disclaimer: Time includes typing in the numbers
+Disclaimer 2: Only some bases are tested
 
-5211011111101125
-+771170171071177
-+ 64366577566346
------------------
-6266570101760672
+Enter its base
+10
 
-Base 16 Test:
-
-A011110A
-+CD111DC
-+ FDDDDF
---------
-ADE000C5
-
-Base 10 Test:
-
-1100001221000011
-+802746727647208
-+ 69995144159996
------------------
-1972743092807215
-
-Base 9 Test:
-
-1001111331111001
-+475054212450574
-+ 67313355331376
------------------
-1554480010003062
-
-Base 16 Test:
-*Using Algorithm II*
-C21101122110100C
-+8BA9CBB4BBC9AB8
-+ 12483333338421
---------------------------
-CADDE600A00030C5
-
-Base 16 Test:
-*Using Algorithm IV*
-1111111221111101
-+42114211241124
-+ 7DBABCECBABD7
---------------------------
-115AFE000100CDEC
-
-Base 5 Test:
-
-1011010330101101
-+233210313012332
-+ 40143311334104
+Enter your number
+103000030
+This is an A5 type of number
+Algorithm V
+This is an A5 type of number
+Algorithm II
+II.2.i
+99122199
++3054503
++ 823328
 ----------------------
-1334420010003042
+103000030
 
-Base 6 Test:
+Time elapsed: 7.757750988006592 seconds
 
-1110110330110111
-+411500424005114
-+ 32434411443423
+Enter its base
+10
+
+Enter your number
+10420275
+This is a B1 type of number
+Algorithm V
+This is an A5 type of number
+Pseudo-Type B1
+Algorithm IV
+10133101
++265562
++ 21612
 ----------------------
-1554450010003052
+10420275
+
+
+
+
+Time elapsed: 14.757316589355469 seconds
+
+Enter its base
+16
+
+Enter the base-16 number ,format DEADBEEF without the 0x prefix
+1AFE02CADE000517352ACE
+This is an A1 type of number
+Algorithm V
+This is an A1 type of number
+Algorithm II
+II.2.i
+1110011101221000000001
++9A89B720E767E027B98A9
++ 456647CE6776EC746654
+--------------------------
+1AFE02CADE000517352ACE
+
+
+
+
+Time elapsed: 5.225094556808472 seconds
+
+Enter its base
+5
+
+Enter your number
+12342000041324
+This is a B6 type of number
+Algorithm V
+This is a B6 type of number
+Algorithm IV
+12100122100121
++222410014222
++ 13412421431
+----------------------
+12342000041324
+
+
+
+
+Time elapsed: 18.701154470443726 seconds
+
+Enter its base
+7
+
+Enter your number
+153526300005241452
+This is an A1 type of number
+Algorithm V
+This is an A1 type of number
+Algorithm II
+II.2.i
+100011112211110001
++45531044244013554
++ 4654110220114564
+----------------------
+153526300005241452
+
+
+
+
+Time elapsed: 16.630630254745483 seconds
