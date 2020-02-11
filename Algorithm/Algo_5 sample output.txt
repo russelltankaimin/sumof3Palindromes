@@ -1,103 +1,25 @@
 Disclaimer: Time includes typing in the numbers
 Disclaimer 2: Only some bases are tested
 
-Enter its base
-10
-
-Enter your number
-103000030
-This is an A5 type of number
-Algorithm V
-This is an A5 type of number
-Algorithm II
-II.2.i
-99122199
-+3054503
-+ 823328
-----------------------
-103000030
-
-Time elapsed: 7.757750988006592 seconds
-
-Enter its base
-10
-
-Enter your number
-10420275
-This is a B1 type of number
-Algorithm V
-This is an A5 type of number
-Pseudo-Type B1
-Algorithm IV
-10133101
-+265562
-+ 21612
-----------------------
-10420275
-
-
-
-
-Time elapsed: 14.757316589355469 seconds
-
-Enter its base
+Enter its base from 5 to 16 
 16
 
 Enter the base-16 number ,format DEADBEEF without the 0x prefix
-1AFE02CADE000517352ACE
+DEADBEEF872365472376700000082763526763556235CADEBEEF
 This is an A1 type of number
 Algorithm V
 This is an A1 type of number
 Algorithm II
-II.2.i
-1110011101221000000001
-+9A89B720E767E027B98A9
-+ 456647CE6776EC746654
---------------------------
-1AFE02CADE000517352ACE
+II.i
+D11111110000000000010000111100001000000000001111111D
++D4414464FBBFEDFEBBB0C82B7F7B28C0BBBEFDEFBBF4644144D
++ 5899983767666737BA637D47EE74D736AB7376667673899985
+----------------------------------------------------
+DEADBEEF87236547237670000FE72763526763556235CADEBEEF
 
 
 
 
-Time elapsed: 5.225094556808472 seconds
-
-Enter its base
-5
-
-Enter your number
-12342000041324
-This is a B6 type of number
-Algorithm V
-This is a B6 type of number
-Algorithm IV
-12100122100121
-+222410014222
-+ 13412421431
-----------------------
-12342000041324
+Time elapsed: 15.917372465133667 seconds
 
 
-
-
-Time elapsed: 18.701154470443726 seconds
-
-Enter its base
-7
-
-Enter your number
-153526300005241452
-This is an A1 type of number
-Algorithm V
-This is an A1 type of number
-Algorithm II
-II.2.i
-100011112211110001
-+45531044244013554
-+ 4654110220114564
-----------------------
-153526300005241452
-
-
-
-
-Time elapsed: 16.630630254745483 seconds
