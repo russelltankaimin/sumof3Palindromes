@@ -11,6 +11,22 @@ import time
 ##### Everything below this row has gone through at least 1 round of testing
 def str_to_lst():
     print("Pending")
+    
+def reVal(num): 
+  
+    if (num >= 0 and num <= 9): 
+        return chr(num + ord('0')); 
+    else: 
+        return chr(num - 10 + ord('A')); 
+        
+def fromDeci(inputNum,base): 
+    res=''
+    while (inputNum > 0): 
+        res+= reVal(inputNum % base); 
+        inputNum = int(inputNum / base); 
+    res = res[::-1]; 
+  
+    return res
 
 def hex_display(res1,res2,res3,number):
     p1,p2,p3='','',''
@@ -26,13 +42,9 @@ def hex_display(res1,res2,res3,number):
     print("-"*len(p1))
     print(number)
 
-def display():
-    print("F")
+
         
-def two_digit_sum(num_string,base):
-    num=num_string
-    if base<11:
-        num=str_to_lst(num_string)
+def two_digit_sum(num,base):
     num=num[::-1]
     if num[1]<=num[0]:
         p1=[num[1],num[1]]
@@ -46,14 +58,9 @@ def two_digit_sum(num_string,base):
         p1=[num[0],num[0]]
         p2=[base-1]
         p3=[1]
-    if base>10:
-        return hex_display(p1,p2,p3,num_string)
-    else:
-        return display(p1,p2,p3,num_string)
+    return [p1,p2,p3]
     
 def three_digit_sum(num,base):
-    if base<11:
-        num=str_to_lst(num)
     num=num[::-1]
     if num[2]<=num[0]:
         p1=[num[2],num[1],num[2]]
@@ -72,21 +79,66 @@ def three_digit_sum(num,base):
             else:
                 if num[2]>=3:
                     p1=[num[2]-2,base-1,num[2]-2]
-                    p2=[111]
+                    p2=[1,1,1]
                     p3=[0]
                 elif num[2]==2:
-                    p1=[101]
+                    p1=[1,0,1]
                     p2=[base-1,base-1]
                     p3=[1]
                 else:
                     p1=[base-1,base-1]
                     p2=[1]
                     p3=[0]
-    num=num[::-1]
-    if base>10:
-        return hex_display(p1,p2,p3,num)
+    return [p1,p2,p3]
+
+def four_digit_sum(num,base):
+    perm=num
+    [d0,d1,d2,d3]=num[::-1]
+    n=perm[0]*(base**3)+perm[1]*(base**2)+perm[2]*base+perm[3]
+    if n>=d3*(base**3)+d3:
+        m=n-d3*(base**3)-d3
+        dp=d(m,base)
+        if m==2*(base**2)+1:
+            if d3==1:
+                return[[1,1,1,1],[base-2,base-2],[3]]
+            elif d3==base-1:
+                return [[base-1,1,1,base-1],[base-2,base-2],[3]]
+            else:
+                return [[d3-1,base-1,base-1,d3-1],[2,1,2],[0]]
+        elif (1<=dp<=base-2 and m==(dp+1)*base+dp):
+            if(d3+dp==d0):
+                if d3!=1:
+                    return [[d3-1,base-2,base-2,d3-1],[1,3,1],[dp,dp]]
+                else:
+                    return [[base-1,base-1,base-1],[dp+1,dp+1],[1]]
+            else:
+                return [[d3-1,base-2,base-2,d3-1],[1,3,1],[dp,dp]]
+        elif d2==0 and d1==0 and d0<=d3-1 and d3!=1:
+            return [[d3-1,base-1,base-1,d3-1],[base+d0-d3],[1]]
+        elif [d0,d1,d2,d3]==[0,0,0,1]:
+            return [[base-1,base-1,base-1],[1],[0]]
+        else:
+            m=fromDeci(m,base)
+            m=[int(m[i]) for i in range(0,len(m))]
+            if len(m)==2:
+                extra=two_digit_sum(m,base)
+            elif len(m)==3:
+                extra=three_digit_sum(m,base)
+            else:
+                extra=four_digit_sum(m,base)
+            config=[[d3,0,0,d3]]
+            config.append(extra[0])
+            config.append(extra[1])
+            return config
+    elif d0<=d3-1 and d3!=1:
+        return [[d3-1,base-1,base-1,d3-1],[base+d0-d3],[1]]
     else:
-        return display(p1,p2,p3,num)
+        return [[base-1,base-1,base-1],[1],[0]]
+                
+                
+            
+    
+
 
 def front_display():
     print("****************************************************************")
@@ -108,7 +160,8 @@ def main():
         perm_number=int(input("Enter your number\n"))
         number=hex_int_to_lst(perm_number)
     if number==number[::-1]:
-        print("It is already a PALINDROME ! ! ! ")
+        print("\\n"+str(perm_number)+" is already a PALINDROME ! ! ! ")
+        return 0
     else:
         length=len(number)
         if length>6:
@@ -117,6 +170,8 @@ def main():
             res=two_digit_sum(number,base)
         elif length==3:
             res=three_digit_sum(number,base)
+        elif length==4:
+            res=four_digit_sum(number,base)
     print(res[0])
     print(res[1])
     print(res[2])
@@ -719,13 +774,9 @@ def algorithm_5(number,config,base):
     p1[m-1]+=s[m-1]
     result[0]=p1
     return result
-
-
-    
+   
 start2=time.time()
 main()
-#algorithm_2([9],[3],[8],10,"102890030",1)
-
 end=time.time()-start2
 print("\n\n\n")
 print("Time elapsed: "+str(end)+" seconds") 
