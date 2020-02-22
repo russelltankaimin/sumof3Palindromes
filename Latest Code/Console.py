@@ -217,23 +217,27 @@ def six_digit_sum(num,base):
             if y[m]!=0:
                 x[m]=1
                 y[m]-=1
+                return [[x[1],x[2],x[3],x[3],x[2],x[1]],[y[1],y[2],y[3],y[2],y[1]],[z[1],z[2],z[2],z[1]]]
             else:
                 if y[m-1]!=0:
                     x[m]=1
                     y[m]=base-2
                     y[m-1]-=1
                     z[m-1]+=1
+                    return [[x[1],x[2],x[3],x[3],x[2],x[1]],[y[1],y[2],y[3],y[2],y[1]],[z[1],z[2],z[2],z[1]]]
                 else:
                     if z[m-1]!=0:
                         y[m]=1
                         y[m-1]=1
                         z[m-1]-=1
+                        return [[x[1],x[2],x[3],x[3],x[2],x[1]],[y[1],y[2],y[3],y[2],y[1]],[z[1],z[2],z[2],z[1]]]
                     else:
                         if x[2]!=0:
                             x[2]-=1
                             x[3]=base-1
                             y[2]=1
                             y[3]=1
+                            return [[x[1],x[2],x[3],x[3],x[2],x[1]],[y[1],y[2],y[3],y[2],y[1]],[z[1],z[2],z[2],z[1]]]
                         elif x[1]==1:
                             return [[2,0,0,0,0,2],[1,1],[base-4]]
                         elif x[1]!=1 and y[1]!=base-1:
@@ -1115,3 +1119,5 @@ main()
 end=time.time()-start2
 print("\n\n\n")
 print("Time elapsed: "+str(end)+" seconds") 
+
+          
