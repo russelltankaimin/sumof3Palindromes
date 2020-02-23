@@ -38,7 +38,8 @@ def hex_display(res1,res2,res3,number):
     print("                 + "+p3)
     print("                 "+"-"*len(p1))
     print("                 "+ str(number))
-        
+def one_digit_sum(num,base):
+    return [num,[0],[0]]       
 def two_digit_sum(num,base):
     num=num[::-1]
     if num[1]<=num[0]:
@@ -50,9 +51,14 @@ def two_digit_sum(num,base):
         p2=[base+num[0]-num[1]+1]
         p3=[0]
     elif num[1]==num[0]+1:
-        p1=[num[0],num[0]]
-        p2=[base-1]
-        p3=[1]
+        if num[0]==0:
+            p1=[base-1]
+            p2=[1]
+            p3=[0]
+        else:
+            p1=[num[0],num[0]]
+            p2=[base-1]
+            p3=[1]
     return [p1,p2,p3]
     
 def three_digit_sum(num,base):
@@ -115,7 +121,9 @@ def four_digit_sum(num,base):
         else:
             m=base_convert(m,base)
             m=hex_int_to_lst(m)
-            if len(m)==2:
+            if len(m)==1:
+                extra=one_digit_sum(m,base)
+            elif len(m)==2:
                 extra=two_digit_sum(m,base)
             elif len(m)==3:
                 extra=three_digit_sum(m,base)
@@ -148,7 +156,9 @@ def five_digit_sum(num,base):
         if (deci_num>=i1 and m!=tho) and (dp==0 or dp==base-1 or m!=(dp+1)*base+dp):
             m=base_convert(m,base)
             m=hex_int_to_lst(m)
-            if len(m)==2:
+            if len(m)==1:
+                extra=one_digit_sum(m,base)
+            elif len(m)==2:
                 extra=two_digit_sum(m,base)
             elif len(m)==3:
                 extra=three_digit_sum(m,base)
@@ -172,9 +182,11 @@ def five_digit_sum(num,base):
         elif deci_num<i1 and d3==0:
             return [[base-1]*4,[1],[0]]
         elif (deci_num<i1 and d3!=0 and m2!=tho) and (dp==0 or dp==base-1 or m2!=(dpp+1)*base+dpp):
-            m=base_convert(m,base)
+            m=base_convert(m2,base)
             m=hex_int_to_lst(m)
-            if len(m)==2:
+            if len(m)==1:
+                extra=one_digit_sum(m,base)
+            elif len(m)==2:
                 extra=two_digit_sum(m,base)
             elif len(m)==3:
                 extra=three_digit_sum(m,base)
@@ -182,7 +194,7 @@ def five_digit_sum(num,base):
                 extra=four_digit_sum(m,base)
             else:
                 extra=five_digit_sum(m,base)
-            config1=[[1,d3-1,base,d3-1,1]]
+            config1=[[1,d3-1,base-1,d3-1,1]]
             config1.append(extra[0])
             config1.append(extra[1])
             return config1
@@ -351,7 +363,9 @@ def six_digit_sum(num,base):
                     s=n-1-base**5
                     m=base_convert(s,base)
                     m=hex_int_to_lst(m)
-                    if len(m)==2:
+                    if len(m)==1:
+                        extra=one_digit_sum(m,base)
+                    elif len(m)==2:
                         extra=two_digit_sum(m,base)
                     elif len(m)==3:
                         extra=three_digit_sum(m,base)
@@ -370,7 +384,9 @@ def six_digit_sum(num,base):
                     s=n-1-base**5
                     m=base_convert(s,base)
                     m=hex_int_to_lst(m)
-                    if len(m)==2:
+                    if len(m)==1:
+                        extra=one_digit_sum(m,base)
+                    elif len(m)==2:
                         extra=two_digit_sum(m,base)
                     elif len(m)==3:
                         extra=three_digit_sum(m,base)
@@ -394,7 +410,9 @@ def six_digit_sum(num,base):
                     s=n-1-base-base**4-base**5
                     m=base_convert(s,base)
                     m=hex_int_to_lst(m)
-                    if len(m)==2:
+                    if len(m)==1:
+                        extra=one_digit_sum(m,base)
+                    elif len(m)==2:
                         extra=two_digit_sum(m,base)
                     elif len(m)==3:
                         extra=three_digit_sum(m,base)
@@ -424,7 +442,9 @@ def six_digit_sum(num,base):
                     s=n-1-2*base-2*(base**4)-base**5
                     m=base_convert(s,base)
                     m=hex_int_to_lst(m)
-                    if len(m)==2:
+                    if len(m)==1:
+                        extra=one_digit_sum(m,base)
+                    elif len(m)==2:
                         extra=two_digit_sum(m,base)
                     elif len(m)==3:
                         extra=three_digit_sum(m,base)
@@ -511,6 +531,10 @@ def main():
             res=five_digit_sum(number,base)
         elif length==6:
             res=six_digit_sum(number,base)
+    if len(res)==2:
+        res.append([0])
+    else:
+        pass
     print(res[0])
     print(res[1])
     print(res[2])
@@ -1113,11 +1137,53 @@ def algorithm_5(number,config,base):
     p1[m-1]+=s[m-1]
     result[0]=p1
     return result
-    
-start2=time.time()
-main()
-end=time.time()-start2
-print("\n\n\n")
-print("Time elapsed: "+str(end)+" seconds") 
 
-          
+def lst_to_int(number):
+    string=''
+    for i in range(0,len(number)):
+        string+=str(number[i])
+    return int(string)
+ 
+def test():
+    start=int(input("Enter a start number"))
+    end=int(input("Enter an end number"))
+    base=int(input("Input base for testing"))
+    for r in range(start,end+1):
+        number=hex_int_to_lst(str(r))
+        if number==number[::-1]:
+            print( "Palindrome "+ str(lst_to_int(number))+" Passed")   
+        else:
+            length=len(number)
+            if length>6:
+                res=main_algorithm(number,base)
+            elif length==2:
+                res=two_digit_sum(number,base)
+            elif length==3:
+                res=three_digit_sum(number,base)
+            elif length==4:
+                res=four_digit_sum(number,base)
+            elif length==5:
+                res=five_digit_sum(number,base)
+            elif length==6:
+                res=six_digit_sum(number,base)
+            if len(res)==2:
+                res.append([0])
+            tester=[res[0],res[1],res[2]]
+            if lst_to_int(tester[0])+lst_to_int(tester[1])+lst_to_int(tester[2])!=lst_to_int(number):
+                print(str(lst_to_int(number))+" Failed")
+                return 0
+            else:
+                print(str(lst_to_int(number))+" Passed" )
+    print("Test ended")
+    return 0
+russell_mode=input("Enter test() to test numbers, main() to run otherwise\n")
+if russell_mode=="test()":
+    test()
+else:
+    start2=time.time()
+    main()
+    end=time.time()-start2
+    print("\n\n\n")
+    print("Time elapsed: "+str(end)+" seconds")
+        
+    
