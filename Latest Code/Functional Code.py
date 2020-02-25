@@ -676,8 +676,8 @@ def check_type(number,base):
         print("This is a B4 type of number")
         types="B4"
         p1=[1,int(num[1])] #Palindrome 1
-        p2=[base-2] #Palindrome 2
-        p3=[1] #Palindrome 3
+        p2=[1] #Palindrome 2
+        p3=[base-2] #Palindrome 3
         config=[p1,p2,p3]
         special=(special and (l%2==0))
         return [types,config,special]
