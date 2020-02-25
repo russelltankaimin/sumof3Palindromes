@@ -2,16 +2,10 @@
 """
 Created on Mon Dec 23 21:16:40 2019
 
-@author: RussellTan
+@author: RussellTan ; with some help from GeeksForGeeks for base_convert function help
 """
 import time
 # This is a console that expresses a number into 3 palindromes
-#start=time.time()
-##### Everything above this row has yet to undergo testing
-##### Everything below this row has gone through at least 1 round of testing
-def str_to_lst():
-    print("Pending")
-    
 def base_convert(inputNum,base):
     def reVal(num): 
         if (num >= 0 and num <= 9): 
